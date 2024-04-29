@@ -5,7 +5,7 @@ const username = process.env.NEXT_PUBLIC_EMAIL_USERNAME;
 const password = process.env.NEXT_PUBLIC_EMAIL_PASSWORD;
 const myEmail = process.env.NEXT_PUBLIC_PERSONAL_EMAIL;
 
-export default async function POST(request) {
+export async function POST(request) {
   console.log('dealing with request');
   const formData = await request.formData();
   const name = formData.get('name');
