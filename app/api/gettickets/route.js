@@ -9,5 +9,5 @@ export async function GET(request) {
     lookup_keys: ['ticket', 'donation'],
   });
 
-  return NextResponse.json(prices.data);
+  return NextResponse.json(prices.data.reverse());
 }

@@ -40,10 +40,10 @@ export const nav_obj = [
       title: 'Sponsors',
       route: 'sponsors',
     },
-    // {
-    //   title: 'Contact',
-    //   route: 'contact',
-    // },
+    {
+      title: 'Contact',
+      route: 'contact',
+    },
     // {
     //   title: 'FAQs',
     //   route: 'faqs',
