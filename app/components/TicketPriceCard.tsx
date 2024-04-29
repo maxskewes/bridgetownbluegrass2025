@@ -58,6 +58,9 @@ const TicketPriceCard = ({ price }: TicketPriceCardProps) => {
             currency: 'USD',
           })}
         </p>
+        <button className='m-8 bg-blue-800 hover:bg-blue-400 rounded-xl p-1 pb-1.5 px-4'>
+          <p className='lowercase text-white tracking-wide'>Purchase</p>
+        </button>
       </button>
     </div>
   );

@@ -15,7 +15,6 @@ type PriceCardProps = {
   };
 };
 
-
 const PriceCard = ({ price }: PriceCardProps) => {
   const { product, unit_amount } = price;
 
@@ -37,9 +36,8 @@ const PriceCard = ({ price }: PriceCardProps) => {
   };
 
   return (
-    <div className='flex flex-col justify-between align-center bg-blue-200 p-8 rounded-md max-w-[400px] text-center'>
-      <p className='text-2xl font-black text-blue-900 m-2 uppercase'>{product.name}</p>
-      <div className='flex flex-column justify-center align-center grow-1'>
+    <div className='flex flex-row justify-between align-center bg-blue-200 p-2 rounded-md text-center max-w-[600px]'>
+      <div className='flex'>
         <Image
           className='max-w-[300px] m-4'
           src={product.images[0]}
@@ -48,17 +46,23 @@ const PriceCard = ({ price }: PriceCardProps) => {
           height={300}
         />
       </div>
-      <p className='text-white m-2'>{product.description}</p>
-      <p className='text-white m-2'>
-        {(unit_amount / 100).toLocaleString('en-US', {
-          style: 'currency',
-          currency: 'USD',
-        })}
-      </p>
+      <div className='flex flex-col justify-between text-blue-900 font-bold py-4'>
+        <p className='text-2xl m-2 uppercase'>{product.name}</p>
+        <p className='m-2 text-base'>{product.description}</p>
+        <p className='m-2 text-2xl'>
+          {(unit_amount / 100).toLocaleString('en-US', {
+            style: 'currency',
+            currency: 'USD',
+          })}
+        </p>
 
-      <button className='m-8 bg-yellow-500 rounded-md p-2 ' onClick={handleSubscription}>
-        <p className='uppercase'>Purchase</p>
-      </button>
+        <button
+          className='m-8 bg-blue-800 hover:bg-blue-400 rounded-xl p-1 pb-1.5 px-4 '
+          onClick={handleSubscription}
+        >
+          <p className='lowercase text-white tracking-wide'>Purchase</p>
+        </button>
+      </div>
     </div>
   );
 };
