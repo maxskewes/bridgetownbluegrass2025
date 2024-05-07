@@ -3,13 +3,13 @@ import nodemailer from 'nodemailer';
 import Mail from 'nodemailer/lib/mailer';
 
 export async function POST(request: NextRequest) {
-  const { name, email, message } = await request.json();
+  const { name, email, phone, shirt, message } = await request.json();
 
   const transport = nodemailer.createTransport({
     service: 'gmail',
-      host: "smtp.gmail.com",
-      port: 465,
-      secure: true,
+    host: 'smtp.gmail.com',
+    port: 465,
+    secure: true,
 
     auth: {
       user: process.env.NEXT_PUBLIC_EMAIL_ADD,
@@ -20,15 +20,15 @@ export async function POST(request: NextRequest) {
   const mailOptions: Mail.Options = {
     from: process.env.NEXT_PUBLIC_EMAIL_ADD,
     to: process.env.NEXT_PUBLIC_EMAIL_ADD,
-    subject: `Message from ${name} (${email})`,
-    text: message,
+    subject: `Volunteer Message from ${name} (${email})`,
+    text: `${name} writes from their email account which is ${email} that their phone number is ${phone} and their shirt size is ${shirt} and would also like to say "${message}"`,
   };
 
   const sendMailPromise = () =>
     new Promise<string>((resolve, reject) => {
       transport.sendMail(mailOptions, function (err) {
         if (!err) {
-          resolve('Contact message sent');
+          resolve('Volunteer message sent');
         } else {
           reject(err.message);
         }
@@ -37,7 +37,7 @@ export async function POST(request: NextRequest) {
 
   try {
     await sendMailPromise();
-    return NextResponse.json({ message: 'Contact message sent' });
+    return NextResponse.json({ message: 'Volunteer message sent' });
   } catch (err) {
     return NextResponse.json({ error: err }, { status: 500 });
   }
