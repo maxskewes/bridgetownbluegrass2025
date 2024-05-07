@@ -28,14 +28,14 @@ export const nav_obj = [
     //   title: 'Merch',
     //   route: 'merch',
     // },
-    // {
-    //   title: 'Artist Apply',
-    //   route: 'artist-apply',
-    // },
-    // {
-    //   title: 'Volunteer',
-    //   route: 'volunteer',
-    // },
+    {
+      title: 'Artist Apply',
+      route: 'artist-apply',
+    },
+    {
+      title: 'Volunteer',
+      route: 'volunteer',
+    },
     {
       title: 'Sponsors',
       route: 'sponsors',

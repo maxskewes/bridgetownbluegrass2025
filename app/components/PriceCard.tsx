@@ -1,3 +1,4 @@
+'use client'
 import React, { MouseEvent } from 'react';
 import axios from 'axios';
 import Image from 'next/image';

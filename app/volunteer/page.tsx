@@ -1,11 +1,14 @@
-'use client'
+'use client';
 import React from 'react';
 import PageContainer from '../components/PageContainer';
+import VolunteerForm from './VolunteerForm';
 
 const Volunteer = () => {
   return (
     <PageContainer heading='Volunteer'>
-      <div>Volunteer</div>
+      <div>
+        <VolunteerForm />
+      </div>
     </PageContainer>
   );
 };
