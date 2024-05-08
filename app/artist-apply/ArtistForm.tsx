@@ -12,7 +12,7 @@ export type ArtistFormData = {
   email: string;
   phone: number;
   video: string;
-  social: string[];
+  social: string;
   message: string;
 };
 
@@ -34,39 +34,116 @@ const ArtistForm: FC = () => {
         </label>
         <input
           type='text'
-          placeholder='Full Name'
+          placeholder='Name'
           className='w-full rounded-md border border-gray-300 bg-white py-3 px-6 text-base font-medium text-gray-700 outline-none focus:border-purple-500 focus:shadow-md'
           {...register('name', { required: true })}
         />
       </div>
       <div className='mb-5'>
         <label
+          htmlFor='hometown'
+          className='mb-3 block text-base font-medium text-black'
+        >
+          Hometown
+        </label>
+        <input
+          type='text'
+          placeholder='Hometown'
+          className='w-full rounded-md border border-gray-300 bg-white py-3 px-6 text-base font-medium text-gray-700 outline-none focus:border-purple-500 focus:shadow-md'
+          {...register('hometown', { required: true })}
+        />
+      </div>
+
+      <div className='mb-5'>
+        <label
+          htmlFor='bio'
+          className='mb-3 block text-base font-medium text-black'
+        >
+          Short Bio
+        </label>
+        <input
+          type='text'
+          placeholder='Bio'
+          className='w-full rounded-md border border-gray-300 bg-white py-3 px-6 text-base font-medium text-gray-700 outline-none focus:border-purple-500 focus:shadow-md'
+          {...register('bio', { required: true })}
+        />
+      </div>
+
+      <div className='mb-5'>
+        <label
+          htmlFor='website'
+          className='mb-3 block text-base font-medium text-black'
+        >
+          Website
+        </label>
+        <input
+          type='text'
+          placeholder='Website'
+          className='w-full rounded-md border border-gray-300 bg-white py-3 px-6 text-base font-medium text-gray-700 outline-none focus:border-purple-500 focus:shadow-md'
+          {...register('website', { required: true })}
+        />
+      </div>
+
+      <div className='mb-5'>
+        <label
           htmlFor='email'
           className='mb-3 block text-base font-medium text-black'
         >
-          Email Address
+          Email
         </label>
         <input
           type='email'
-          placeholder='example@domain.com'
+          placeholder='Email'
           className='w-full rounded-md border border-gray-300 bg-white py-3 px-6 text-base font-medium text-gray-700 outline-none focus:border-purple-500 focus:shadow-md'
           {...register('email', { required: true })}
         />
       </div>
+
       <div className='mb-5'>
         <label
           htmlFor='phone'
           className='mb-3 block text-base font-medium text-black'
         >
-          Phone Number
+          Contact Phone Number
         </label>
         <input
-          type='number'
-          placeholder='Phone Number'
+          type='text'
+          placeholder='Contact Phone Number'
           className='w-full rounded-md border border-gray-300 bg-white py-3 px-6 text-base font-medium text-gray-700 outline-none focus:border-purple-500 focus:shadow-md'
           {...register('phone', { required: true })}
         />
       </div>
+
+      <div className='mb-5'>
+        <label
+          htmlFor='video'
+          className='mb-3 block text-base font-medium text-black'
+        >
+          Video URL (provide one)
+        </label>
+        <input
+          type='text'
+          placeholder='Video URL'
+          className='w-full rounded-md border border-gray-300 bg-white py-3 px-6 text-base font-medium text-gray-700 outline-none focus:border-purple-500 focus:shadow-md'
+          {...register('video', { required: true })}
+        />
+      </div>
+
+      <div className='mb-5'>
+        <label
+          htmlFor='social'
+          className='mb-3 block text-base font-medium text-black'
+        >
+          Social Media Links
+        </label>
+        <input
+          type='text'
+          placeholder='Social Media Links'
+          className='w-full rounded-md border border-gray-300 bg-white py-3 px-6 text-base font-medium text-gray-700 outline-none focus:border-purple-500 focus:shadow-md'
+          {...register('social', { required: true })}
+        />
+      </div>
+
       <div className='mb-5'>
         <label
           htmlFor='message'
@@ -74,13 +151,14 @@ const ArtistForm: FC = () => {
         >
           Message
         </label>
-        <textarea
-          rows={4}
-          placeholder='Type your message'
-          className='w-full resize-none rounded-md border border-gray-300 bg-white py-3 px-6 text-base font-medium text-gray-700 outline-none focus:border-purple-500 focus:shadow-md'
+        <input
+          type='text'
+          placeholder='Message'
+          className='w-full rounded-md border border-gray-300 bg-white py-3 px-6 text-base font-medium text-gray-700 outline-none focus:border-purple-500 focus:shadow-md'
           {...register('message', { required: true })}
-        ></textarea>
+        />
       </div>
+
       <div>
         <button className='hover:shadow-form rounded-md bg-purple-500 py-3 px-8 text-base font-semibold text-white outline-none'>
           Submit
