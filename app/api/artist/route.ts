@@ -21,7 +21,7 @@ export async function POST(request: NextRequest) {
   const mailOptions: Mail.Options = {
     from: process.env.NEXT_PUBLIC_EMAIL_ADD,
     to: process.env.NEXT_PUBLIC_EMAIL_ADD,
-    subject: `Artist Application from ${name}`,
+    subject: `ARTIST APPLICATION: ${name}, email: ${email}`,
     text: `${name}, ${hometown}; sent from ${email}: ${message}; url:${website}, phone: ${phone}, "${bio}"; video: ${video}, social: ${social}`
   }
   const sendMailPromise = () =>

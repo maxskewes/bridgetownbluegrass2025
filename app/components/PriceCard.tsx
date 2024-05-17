@@ -39,13 +39,14 @@ const PriceCard = ({ price }: PriceCardProps) => {
   return (
     <div className='flex flex-row justify-between align-center bg-blue-200 p-2 rounded-md text-center max-w-[600px]'>
       <div className='flex'>
-        <Image
-          className='max-w-[300px] m-4'
+        {/* <Image
+          className='m-4'
           src={product.images[0]}
           alt={product.description}
           width={300}
           height={300}
-        />
+        /> */}
+        <div className='bg-red-400 w-[300px] h-[300px]' />
       </div>
       <div className='flex flex-col justify-between text-blue-900 font-bold py-4'>
         <p className='text-2xl m-2 uppercase'>{product.name}</p>

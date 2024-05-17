@@ -20,8 +20,13 @@ export async function POST(request: NextRequest) {
   const mailOptions: Mail.Options = {
     from: process.env.NEXT_PUBLIC_EMAIL_ADD,
     to: process.env.NEXT_PUBLIC_EMAIL_ADD,
-    subject: `Volunteer Message from ${name} (${email})`,
-    text: `${name} writes from their email account which is ${email} that their phone number is ${phone} and their shirt size is ${shirt} and would also like to say "${message}"`,
+    subject: `VOLUNTEER message: ${name} from ${email}`,
+    html: `<div className='flex flex-col justify-center items-center bg-blue-200 text-white p-8 m-4'>
+  <div className='text-xl'>${name}</div>
+  <div className='text-md'>${email}</div>
+  <div className='text-sm'>${message}</div>
+  <div className='text2xl'>Take that lads!!!</div>
+</div>`,
   };
 
   const sendMailPromise = () =>

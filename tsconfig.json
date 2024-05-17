@@ -21,6 +21,6 @@
       "@/*": ["./*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "app/api/getproducts/route.js", "app/contact/ContactForm.jsx", "postmark.js"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "app/api/getproducts/route.js", "app/contact/ContactForm.jsx", "postmark.js", "app/components/VolunteerEmailTemplate.jsx"],
   "exclude": ["node_modules"]
 }

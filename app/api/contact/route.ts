@@ -20,7 +20,7 @@ export async function POST(request: NextRequest) {
   const mailOptions: Mail.Options = {
     from: process.env.NEXT_PUBLIC_EMAIL_ADD,
     to: process.env.NEXT_PUBLIC_EMAIL_ADD,
-    subject: `Message from ${name} (${email})`,
+    subject: `CONTACT Message: ${name} (${email})`,
     text: message,
   };
 

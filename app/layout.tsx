@@ -78,7 +78,7 @@ export default function RootLayout({
         <header className='relative '>
           <Header />
         </header>
-        <main>{children}</main>
+        <main className='min-h-full min-w-screen -z-1'>{children}</main>
         <footer>
           <Footer />
         </footer>

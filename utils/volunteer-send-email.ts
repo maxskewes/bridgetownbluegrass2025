@@ -1,7 +1,7 @@
 import { VolunteerFormData } from '../app/volunteer/VolunteerForm';
 
 export function volunteerSendEmail(data: VolunteerFormData) {
-  const apiEndpoint = '/api/contact';
+  const apiEndpoint = '/api/volunteer';
 
   fetch(apiEndpoint, {
     method: 'POST',
