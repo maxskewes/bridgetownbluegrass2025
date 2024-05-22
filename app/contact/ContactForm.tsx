@@ -1,5 +1,4 @@
 'use client';
-
 import { FC } from 'react';
 import { useForm } from 'react-hook-form';
 import { contactSendEmail } from '@/utils/contact-send-email';
@@ -47,7 +46,7 @@ const ContactForm: FC = () => {
               {...register('message', { required: true })}
             />
           </FormFieldWrapper>
-   
+
           <SubmitButton>CONTACT BB&FF CREW</SubmitButton>
         </GridWrapper>
       </form>
