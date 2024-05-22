@@ -23,7 +23,7 @@ const PageContainer = ({ heading, children }: PageContainerProps) => {
           <p className='text-xl md:text-2xl lg:text-3xl xl:text-4xl font-semibold text-white tracking-widest p-2 md:p-4 lg:p-6 mx-12 text-center uppercase'>
             {heading}
           </p>
-          {children}
+            {children}
         </div>
       </motion.div>
     </div>

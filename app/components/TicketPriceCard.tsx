@@ -1,6 +1,6 @@
 import React, { MouseEvent } from 'react';
 import axios from 'axios';
-import Image from 'next/image';
+import { motion } from 'framer-motion';
 
 type TicketPriceCardProps = {
   price: {
@@ -36,14 +36,30 @@ const TicketPriceCard = ({ price }: TicketPriceCardProps) => {
   };
 
   return (
-    <div className='flex flex-col justify-between align-center bg-blue-200 p-2 pb-4 rounded-md min-w-80 max-w-80 text-center'>
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{
+        opacity: 1,
+      }}
+      transition={{
+        duration: 0.3,
+      }}
+      className='flex flex-col justify-between align-center bg-blue-200 p-2 pb-4 rounded-md min-w-80 max-w-80 text-center'
+    >
       <div>
         <p className='text-3xl font-black text-blue-800 m-2 uppercase tracking-wider font-bold'>
           {product.name}
         </p>
 
         <button onClick={handleSubscription}>
-          <img
+          <motion.img
+            initial={{ opacity: 0 }}
+            animate={{
+              opacity: 1,
+            }}
+            transition={{
+              duration: 0.3,
+            }}
             className='flex justify-center px-4'
             src={product.images[0]}
             alt={product.description}
@@ -66,7 +82,7 @@ const TicketPriceCard = ({ price }: TicketPriceCardProps) => {
           <p className='lowercase text-white tracking-wide'>Purchase</p>
         </button>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

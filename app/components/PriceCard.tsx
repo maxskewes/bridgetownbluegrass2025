@@ -1,7 +1,7 @@
-'use client'
+'use client';
 import React, { MouseEvent } from 'react';
 import axios from 'axios';
-import Image from 'next/image';
+import { motion } from 'framer-motion';
 
 type PriceCardProps = {
   price: {
@@ -37,35 +37,53 @@ const PriceCard = ({ price }: PriceCardProps) => {
   };
 
   return (
-    <div className='flex flex-row justify-between align-center bg-blue-200 p-2 rounded-md text-center max-w-[600px]'>
-      <div className='flex'>
-        {/* <Image
-          className='m-4'
-          src={product.images[0]}
-          alt={product.description}
-          width={300}
-          height={300}
-        /> */}
-        <div className='bg-red-400 w-[300px] h-[300px]' />
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{
+        opacity: 1,
+      }}
+      transition={{
+        duration: 0.3,
+      }}
+      className='flex flex-col justify-between align-center bg-blue-200 p-2 pb-4 rounded-md min-w-80 max-w-80 text-center'
+    >
+      <div>
+        <p className='text-3xl font-black text-blue-800 m-2 uppercase tracking-wider font-bold'>
+          {product.name}
+        </p>
+
+        <button onClick={handleSubscription}>
+          <motion.img
+            initial={{ opacity: 0 }}
+            animate={{
+              opacity: 1,
+            }}
+            transition={{
+              duration: 0.3,
+            }}
+            className='flex justify-center px-4'
+            src={product.images[0]}
+            alt={product.description}
+          />
+        </button>
+
+        <p className='text-blue-800 tracking-wide m-2'>{product.description}</p>
       </div>
-      <div className='flex flex-col justify-between text-blue-900 font-bold py-4'>
-        <p className='text-2xl m-2 uppercase'>{product.name}</p>
-        <p className='m-2 text-base'>{product.description}</p>
-        <p className='m-2 text-2xl'>
+      <div>
+        <p className='text-4xl text-blue-800 m-2'>
           {(unit_amount / 100).toLocaleString('en-US', {
             style: 'currency',
             currency: 'USD',
           })}
         </p>
-
         <button
-          className='m-8 bg-blue-800 hover:bg-blue-400 rounded-xl p-1 pb-1.5 px-4 '
           onClick={handleSubscription}
+          className='bg-blue-800 hover:bg-blue-400 rounded-xl p-1 pb-1.5 px-4'
         >
           <p className='lowercase text-white tracking-wide'>Purchase</p>
         </button>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
