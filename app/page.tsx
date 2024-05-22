@@ -5,7 +5,7 @@ export default function Home() {
   return (
     <div className='w-[100vw] relative flex justify-center'>
       <img
-        src={'/images/goo-background.png'}
+        src={'/images/homepage-background1000.jpg'}
         alt={'background image of stage'}
         className='min-w-full h-full object-cover absolute -z-10 w-screen flex justify-center'
       />

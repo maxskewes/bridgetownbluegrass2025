@@ -29,14 +29,16 @@ const NavigationBar = () => {
   };
 
   return (
-    <div className='relative w-screen min-h-[40px] lg:min-h-[50px]'>
-      <div className='w-[2400px] bg-blue-200'>
-        <img src='/images/waves.png' alt='Wave Border' className='absolute' />
-        <div className='absolute w-full flex flex-row justify-around align-center pt-2 px-0 lg:px-[5%] xl:px-[10%] '>
-          {nav_obj.map((nav, i) => {
-            return <SiteLink key={i} title={nav.title} route={nav.route} />;
-          })}
-        </div>
+    <div className='relative w-screen -mt-4'>
+      <img
+        src='/images/waves.png'
+        alt='Wave Border'
+        className='min-h-[40px] max-h-[40px] lg:min-h-[48px] lg:max-h-[48px] absolute object-cover'
+      />
+      <div className='relative w-full flex flex-row justify-around align-center pt-2 px-0 lg:px-[5%] xl:px-[10%] '>
+        {nav_obj.map((nav, i) => {
+          return <SiteLink key={i} title={nav.title} route={nav.route} />;
+        })}
       </div>
     </div>
   );

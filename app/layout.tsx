@@ -75,7 +75,7 @@ export default function RootLayout({
   return (
     <html lang='en'>
       <body className={dellaRespira.className}>
-        <header className='relative '>
+        <header className='relative bg-gradient-to-b from-purple-800 from-5% via-orange-300 via-40% to-orange-100 to-100%'>
           <Header />
         </header>
         <main className='min-h-full min-w-screen -z-1'>{children}</main>
