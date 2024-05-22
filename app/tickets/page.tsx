@@ -40,7 +40,7 @@ const Tickets = () => {
 
   return (
     <PageContainer heading='Event Tickets'>
-      <div className='flex flex-col gap-6'>
+      <div className='flex flex-col md:flex-row gap-6'>
         {prices &&
           prices.map((price, index) => (
             <TicketPriceCard price={price} key={index} />

@@ -28,7 +28,7 @@ const Header = () => {
         width={800}
         height={500}
       /> */}
-      <img src={'/images/purple-clouds.png'} alt={'purple clouds over bridge'} className='min-h-[140px] max-h-[200px] object-cover' />
+      <img src={'/images/purple-clouds.svg'} alt={'purple clouds over bridge'} className='min-h-[140px] max-h-[200px] object-cover' />
       </div>
       {/* <HeaderComponents /> */}
       <NavigationBar />

@@ -36,32 +36,36 @@ const TicketPriceCard = ({ price }: TicketPriceCardProps) => {
   };
 
   return (
-    <div className='flex flex-col justify-between align-center bg-blue-200 p-2 rounded-md max-w-[800px] text-center'>
-      <p className='text-3xl font-black text-blue-800 m-2 uppercase'>
-        {product.name}
-      </p>
+    <div className='flex flex-col justify-between align-center bg-blue-200 p-2 pb-4 rounded-md min-w-80 max-w-80 text-center'>
+      <div>
+        <p className='text-3xl font-black text-blue-800 m-2 uppercase tracking-wider font-bold'>
+          {product.name}
+        </p>
 
-      <button onClick={handleSubscription}>
-        <div className='flex flex-column justify-center align-center grow-1'>
-          <Image
-            className='m-4'
+        <button onClick={handleSubscription}>
+          <img
+            className='flex justify-center px-4'
             src={product.images[0]}
             alt={product.description}
-            width={300}
-            height={300}
           />
-        </div>
-        <p className='text-blue-800 m-2'>{product.description}</p>
+        </button>
+
+        <p className='text-blue-800 tracking-wide m-2'>{product.description}</p>
+      </div>
+      <div>
         <p className='text-4xl text-blue-800 m-2'>
           {(unit_amount / 100).toLocaleString('en-US', {
             style: 'currency',
             currency: 'USD',
           })}
         </p>
-        <button className='m-8 bg-blue-800 hover:bg-blue-400 rounded-xl p-1 pb-1.5 px-4'>
+        <button
+          onClick={handleSubscription}
+          className='bg-blue-800 hover:bg-blue-400 rounded-xl p-1 pb-1.5 px-4'
+        >
           <p className='lowercase text-white tracking-wide'>Purchase</p>
         </button>
-      </button>
+      </div>
     </div>
   );
 };
