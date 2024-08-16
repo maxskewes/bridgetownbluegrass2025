@@ -78,7 +78,7 @@ export default function RootLayout({
         <header className='relative bg-gradient-to-b from-purple-800 from-5% via-orange-300 via-40% to-orange-100 to-100%'>
           <Header />
         </header>
-        <main className='min-h-full min-w-screen -z-1'>{children}</main>
+        <main className='min-h-full min-w-screen'>{children}</main>
         <footer>
           <Footer />
         </footer>

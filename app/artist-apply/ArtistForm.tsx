@@ -34,11 +34,11 @@ const ArtistForm: FC = () => {
               htmlFor='name'
               className='mb-2 block text-base font-medium text-black'
             >
-              Name of Act
+              Name of Band/Performer
             </label>
             <input
               type='text'
-              placeholder="Performer(s)'s Name"
+              placeholder="Band/Performer Name"
               className='w-full rounded-md border border-gray-300 bg-white py-3 px-6 text-base font-medium text-gray-700 outline-none focus:border-purple-500 focus:shadow-md'
               {...register('name', { required: true })}
             />
@@ -67,7 +67,7 @@ const ArtistForm: FC = () => {
             </label>
             <textarea
               rows={4}
-              placeholder='Bio'
+              placeholder='Biography'
               className='w-full rounded-md border border-gray-300 bg-white py-3 px-6 text-base font-medium text-gray-700 outline-none focus:border-purple-500 focus:shadow-md'
               {...register('bio', { required: true })}
             />
@@ -78,7 +78,7 @@ const ArtistForm: FC = () => {
               htmlFor='website'
               className='mb-2 block text-base font-medium text-black'
             >
-              Website
+              Primary Website
             </label>
             <input
               type='text'

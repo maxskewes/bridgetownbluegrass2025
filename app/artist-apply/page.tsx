@@ -8,9 +8,9 @@ const ArtistApply = () => {
   return (
     <PageContainer heading='Artist Apply'>
       <CenterTextBox>
-        We are not currently accepting applications for our forth-coming 2025
-        festival. <br /> Please see below for application criteria and check back in with
-        in the new year!
+        Though we are not currently accepting applications for our forth-coming
+        2025 festival, please see below for application criteria and
+        check back in with us in the new year!
       </CenterTextBox>
       <PageTextBox>
         The Bridgetown Bluegrass & Folk Festival seeks hard-working artists that
